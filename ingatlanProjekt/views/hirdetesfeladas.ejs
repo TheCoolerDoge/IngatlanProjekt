@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Hirdetésfeladás</title>
+
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="css/index.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="fixmeret">
+        <header class="Felsoresz">
+            <form action="/addIngatlan" method="post" >
+
+               
+        
+                <div class="kezdo" id="home" onclick="openInNewTab('http://134.209.85.197:8080/')"></div>
+                <div  class="kezdo" id="hirdetesfeladas"> <div id="buttondes"> Alaphelyzet</div></div>
+            </header>
+               <div  id="szlogen">Add fel a hírdetésed percek alatt!</div>
+               <div  id="ingatlanHirdet">
+
+            <div id="elado" ><input type="radio" id="eladoradio" name="elado" value="HTML">Eladó</div>
+            <div id="kiado" ><input type="radio" id="kiadoradio" name="kiado" value="HTML">Kiadó</div>
+            <select name="helysegtipusok" name="kategoria" id="helysegtipus">
+                <option value="lakas">Lakás</option>
+                <option value="haz">Ház</option>
+                <option value="telek">Telek</option>
+                <option value="garazs">Garázs</option>
+                <option value="iroda">Iroda</option>
+            </select>
+            <div id="helyszin">Hol van az ingatlanod?</div>
+            <div id="arminmax" placeholder="ár">
+                <input type="number" id="kertAr" name="ar" min="1" max="10000" placeholder="Ár">
+                
+                <div>M ft</div>
+            </div>
+            <div id="alaptminmax" >
+                
+                <input type="number" id="alapT" name="meret" min="1" max="10000" placeholder="alapterület">
+                <div>m²</div>
+                
+            </div>
+            <div id="szobaminmax" >
+                
+                <input type="number" id="szobaSzam" name="szoba" min="0" max="10000" placeholder="Szoba">
+            
+                
+            </div>
+            <!-- <div id="ujepitesu">
+                <input type="checkbox" id="ujepitesuch" name="ujepitesu" checked>
+                <label for="ujepitesu">új építésű</label>
+            </div> -->
+
+            <div id="pozicioreszletes">
+                <div id="reszletes">
+                    <div id="options">
+                        <div id="internet" ><input type="checkbox" id="net" name="net" >Internet</div>
+                        <div id="gaz" ><input type="checkbox" id="gaz" name="gaz" >Gáz</div>
+                        <div id="viz" ><input type="checkbox" id="viz" name="viz" >Víz</div>
+                        <div id="villany" ><input type="checkbox" id="villany" name="villany" >Villany</div>
+                    </div>
+                </div>
+                <div id="reszletes">
+                    <div id="cim">
+                        
+                        <div id="iranyitoSzamStyle">Irányitószám:<input type="number" id="iranyitoszam" name="iranyitoszam" min="0" max="9999" placeholder="Irányitószám"></div>
+                        <div id="varosneveStyle"> Város neve<input type="text" id="varos"  placeholder="Város neve"></div>
+                        <div id="utcaneveStyle"> Utca neve<input type="text" id="utca"  placeholder="Utca neve"></div>
+                        <div id="hazszamStyle">Ház szám:<input type="number" id="hazszam" name="tentacles" min="0" max="10000" placeholder="Ház szám"></div>
+                        <div id="emeletStyle">Emelet:<input type="text" id="emelet" name="emelet" placeholder="Emelet"></div>
+                        <div id="ajtoStyle">Ajtó:<input type="number" id="ajto" name="ajto" min="0" max="10000" placeholder="Ajtó"></div>
+                        
+        
+                    </div>
+                </div>
+                <!-- <div class="center">
+                    <div class="form-input">
+                      <label for="file-ip-1">Kép feltöltés</label>
+                      <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+                  
+                    </div>
+                  </div> 
+      
+                  <div class="preview" id="preview">
+                    
+                  </div>
+                </div> -->
+                <input id="ingatlanGomb" type="submit" value="Ingatlan Létrehozása">
+            
+            </div>
+        </form>
+    </div>
+</body>
+</html>

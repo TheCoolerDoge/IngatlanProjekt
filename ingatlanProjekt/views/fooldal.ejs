@@ -1,0 +1,178 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Ingatlan</title>
+    <script src="css/index.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="fixmeret">
+        <header class="Felsoresz">
+            <div class="kezdo" id="home" onclick="openInNewTab('http://134.209.85.197:8080/')"></div>
+            <div  class="kezdo" id="hirdetesfeladas" onclick="openInNewTab('http://134.209.85.197:8080/hirdetesfeladas')"> <div id="buttondes"> Hírdetésfeladás</div></div>
+            
+            <% if (!current_role ) { %>  <div  class="kezdo"  id="regisztracio" onclick="openRegForm()">Regisztráció </div>  <% } %>
+          
+            <% if (!current_role ) { %> <div class="kezdo"  id="Bejelentkezés"  onclick="openLogForm()">Bejelentkezés</div>  <% } %>
+            
+
+            <% if (current_role ) { %> <div  class="kezdo"  id="profilFooldal" onclick="openInNewTab('http://134.209.85.197:8080/profil')">Profil </div>  <% } %>
+
+            <% if (current_role ) { %> <a  class="kezdo"  id="logout" href="/logout">Kijelentkezés </a>  <% } %>
+
+
+
+
+             
+        </header>
+ 
+    
+        <div  id="szlogen">Keress álmaid ingatlanára melyet nálunk megtalálsz!</div>
+        
+        <div  id="kereses">
+            <div id="elado" ><input type="radio" id="eladoradio" name="fav_language" value="HTML">Eladó</div>
+            <div id="kiado" ><input type="radio" id="kiadoradio" name="fav_language" value="HTML">Kiadó</div>
+            <select name="helysegtipusok" id="helysegtipus">
+                <option value="lakas">Lakás</option>
+                <option value="haz">Ház</option>
+                <option value="telek">Telek</option>
+                <option value="garazs">Garázs</option>
+                <option value="iroda">Iroda</option>
+            </select>
+            <div id="holkeressel">Hol keresel?</div>
+            <div id="arminmax" placeholder="ár">
+                <input type="number" id="minar" name="tentacles" min="1" max="10000" placeholder="min">
+                <div>-</div>
+                <input type="number" id="maxar" name="tentacles" min="1" max="10000" placeholder="max">
+                <div>M ft</div>
+            </div>
+            <div id="alaptminmax" >
+                
+                <input type="number" id="minalap" name="tentacles" min="1" max="10000" placeholder="min">
+                <div>-</div>
+                <input type="number" id="maxalap" name="tentacles" min="1" max="10000" placeholder="max">
+                <div>m²</div>
+                
+            </div>
+            <div id="szobaminmax" >
+                
+                <input type="number" id="minszoba" name="tentacles" min="1" max="10000" placeholder="min">
+               -
+                <input type="number" id="maxszoba" name="tentacles" min="1" max="10000" placeholder="max">
+            
+                
+            </div>
+            <div id="ujepitesu">
+                <input type="checkbox" id="ujepitesuch" name="ujepitesu" checked>
+                <label for="ujepitesu">új építésű</label>
+            </div>
+        </div>
+        <div id="ingatlantalalatok">
+            <div class="hirkezdo">Találatok</div>
+            <div  class="ingatlanpreview">
+                
+                <div id="ingatlanbox">
+                    <div class="ingatlanimgdiv"><img src="../public/img/sale.png" alt="Girl in a jacket" id="hirimg" ></div>
+                    
+                   <div class="Row"> 
+                        <div class="Column" id="ingatlanar"><div>Ár:</div></div>
+                        <div class="Column" id="ingatlanar"><div>15 millió Ft</div></div>
+                        
+                    </div>
+                    <div class="Row"> 
+                        
+                        <div class="Column1" id="ingatlanfont"><div>Budapest</div></div>
+                        <div class="Column1" id="ingatlanfont"><div>János tér</div></div>
+                        <div class="Column1" id="ingatlanfont"><div>13</div></div>
+                        <div class="Column1" id="ingatlanfont"><div>1</div></div>
+                        <div class="Column1" id="ingatlanfont"><div>8</div></div>
+                    </div>
+                    <div class="Row"> <div id="ingatlantartalom">Ez a hír csak egy példa, amely arra szolgál hogy megmutassa hogy hogyan fog madj kinézni ha valaki egy rendes hírt tesz közzé. Első körben csak egy alap szöveg egy főképpel,létrehozási idővel, címmel, és tartalommal. Inentől random szöveg...
+                        This random string generator creates a bunch of random strings based on the configuration parameters that you specified. The configuration options let you set the string's length and the number of results you want to get. We've also created predefined string alphabets that you can use, or you can use a custom alphabet. The predefined alphabets include lowercase and uppercase strings, mixed case strings, and numbers. If you are setting a custom alphabet, then first select the "Custom character set" option and then enter all the characters that you want to appear in your string. Randomabulous! </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        <div class="hirpreview">
+            <div class="hirkezdo">Legújabb Hírek</div>
+        
+            <div id="hirpreview">
+            
+                <div id="hirbox">
+                    <img src="css/img/delete-button.png" alt="Girl in a jacket" id="hirimg">
+                    <div id="hirido">2022.11.7</div>
+                    <div id="hircim">Elkészült a hír</div>
+                    <div id="hirtartalom">Ez a hír csak egy példa, amely arra szolgál hogy megmutassa hogy hogyan fog madj kinézni ha valaki egy rendes hírt tesz közzé. Első körben csak egy alap szöveg egy főképpel,létrehozási idővel, címmel, és tartalommal. Inentől random szöveg...
+                        This random string generator creates a bunch of random strings based on the configuration parameters that you specified. The configuration options let you set the string's length and the number of results you want to get. We've also created predefined string alphabets that you can use, or you can use a custom alphabet. The predefined alphabets include lowercase and uppercase strings, mixed case strings, and numbers. If you are setting a custom alphabet, then first select the "Custom character set" option and then enter all the characters that you want to appear in your string. Randomabulous! </div>
+                </div>
+                <div id="hirbox">
+                    <img src="css/img/delete-button.png" alt="Girl in a jacket" id="hirimg">
+                    <div id="hirido">2022.11.7</div>
+                    <div id="hircim">Elkészült a hír</div>
+                    <div id="hirtartalom">Ez a hír csak egy példa, amely arra szolgál hogy megmutassa hogy hogyan fog madj kinézni ha valaki egy rendes hírt tesz közzé. Első körben csak egy alap szöveg egy főképpel,létrehozási idővel, címmel, és tartalommal. Inentől random szöveg...
+                        This random string generator creates a bunch of random strings based on the configuration parameters that you specified. The configuration options let you set the string's length and the number of results you want to get. We've also created predefined string alphabets that you can use, or you can use a custom alphabet. The predefined alphabets include lowercase and uppercase strings, mixed case strings, and numbers. If you are setting a custom alphabet, then first select the "Custom character set" option and then enter all the characters that you want to appear in your string. Randomabulous! </div>
+                </div>
+
+
+            </div>
+        </div>
+       
+        </div>
+        
+
+
+
+
+        <div class="form-popup" id="logForm">
+            <form action="/login" class="form-container" method="post">
+            <h1>Bejelentkezés</h1>
+        
+            <label for="email"><b>E-mail</b></label>
+            <input type="text" placeholder="E-mail címed" name="email" required>
+        
+            <label for="psw"><b>Jelszó</b></label>
+            <input type="password" placeholder="Jelszavad" name="psw" required>
+        
+            <button type="submit" class="btn">Belépek</button>
+            <button type="button" class="regLog" onclick="openRegForm()">Nincs még fiókod?</button>
+            <button type="button" class="btn cancel" onclick="closeLogForm()">Vissza</button>
+            </form>
+        </div>
+        
+        <div class="form-popup" id="regForm">
+            <form action="/register" class="form-container" method="post">
+                <h1>Regisztráció</h1>
+            
+                <label for="nev"><b>Név</b></label>
+                <input type="text" placeholder="Neved" name="nev" required>
+
+                <label for="email"><b>E-mail</b></label>
+                <input type="email" placeholder="E-mail címed" name="email" required>
+            
+                <label for="psw"><b>Jelszó</b></label>
+                <input type="password" placeholder="Jelszavad" id="password" name="psw" required>
+        
+                <div id="password-validation-text" style="display:none;color:red;">A két jelszó nem egyezik!</div>
+        
+                <label for="psw"><b>Jelszó újra</b></label>
+                <input type="password" placeholder="Jelszavad újra" id="passwordAgain"name="psw" required>
+            
+                <button type="submit" class="btn" onclick="passwordCheck(event)">Regisztrálok</button>
+                <button type="button" class="regLog" onclick="openLogForm()">Már regisztráltál?</button>
+                <button type="button" class="btn cancel" onclick="closeRegForm()">Vissza</button>
+            </form>
+        </div>
+         
+       
+    </div>
+</body>
+</html>
