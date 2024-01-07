@@ -1,0 +1,1 @@
+Egyetemi csoport projekt amelyben egy ingatlanközvetítő oldalt valósítottunk meg, az adatbázis a DigitalOcean-on futott ami mára elérhetetlen lett, viszont a kód továbbra is megtekinthető, amennyiben megfelelő PostgreSQL adatbázishoz csatlakoztatjuk működőképes
